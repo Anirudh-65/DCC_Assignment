@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1.e.1</title>
+</head>
+<body>
+
+    <form method="post" action="/e_1">
+        <input type="text" name="filter_value" placeholder="Enter the value to filter">
+        <select name="filter_type" id="dropdown" placeholder="none">
+            <option value="" disabled selected hidden>Choose an option</option>
+            <option value="Journal_date">Journal Date</option>
+            <option value="Date_of_Purchase">Date of Purchase</option>
+            <option value="Date_of_Encashment">Date of Encashment</option>
+            <option value="Name_of_the_Purchaser">Name of the Purchaser</option>
+        </select>
+        <input type="submit" value="Filter">
+    </form>
+    
+        {% if a_2_data%}
+        <table>
+            <th>Sr. No.</th>
+            <th>Refrence No. (URN)</th>
+            <th>Journal Date</th>
+            <th>Date of Purchase</th>
+            <th>Date of Expiry</th>
+            <th>Name of Purchaser</th>
+            <th>Prefix</th>
+            <th>Bond Number</th>
+            <th>Denominations</th>
+            <th>Issue Branch Code</th>
+            <th>Issue Teller</th>
+            <th>Status</th>
+        {% for item in a_2_data %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6]}}</td>
+            <td>{{item[7]}}</td>
+            <td>{{item[8]}}</td>
+            <td>{{item[9]}}</td>
+            <td>{{item[10]}}</td>
+            <td>{{item[11]}}</td>
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+        </table>
+        <form method="post" action="/">
+            <button type="submit" value="home" name="home">Return to Home Page</button>
+        </form>
+
+        
+</body>
+</html>
